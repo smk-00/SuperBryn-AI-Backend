@@ -77,12 +77,12 @@ async def entrypoint(ctx: JobContext):
         vad=silero.VAD.load(),
         stt=deepgram.STT(),
         llm=openai.LLM(),
-        tts=cartesia.TTS(),
+        tts=cartesia.TTS(speed=0.85), 
         chat_ctx=initial_ctx,
         tools=llm.find_function_tools(tools),
     )
     tools.assistant = assistant 
-    # tts=cartesia.TTS()
+    # tts=openai.TTS()
     print("Assistant initialized")
     session = AgentSession()
     files_session["val"] = session 

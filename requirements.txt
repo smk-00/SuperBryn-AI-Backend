@@ -5,3 +5,5 @@ livekit-plugins-openai
 livekit-plugins-silero
 python-dotenv
 supabase
+fastapi
+uvicorn

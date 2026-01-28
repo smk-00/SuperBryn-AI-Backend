@@ -175,7 +175,9 @@ async def monitor_chat(assistant: Agent, room: rtc.Room):
                              print("DEBUG: Assistant tool call detected (hidden from transcript)")
                              
                         msg_type = "agent_speech"
-                    
+                    else:
+                        msg_type = "tool_execution"  
+
                     if msg_type:
                         print(f"DEBUG: Publishing {msg_type}: {content[:30]}...") 
                         payload = json.dumps({

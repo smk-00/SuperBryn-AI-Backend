@@ -173,7 +173,7 @@ async def monitor_chat(assistant: Agent, room: rtc.Room):
                         # Filter out tool calls which might appear as assistant messages with tool_calls but no content
                         if hasattr(msg, "tool_calls") and msg.tool_calls:
                              print("DEBUG: Assistant tool call detected (hidden from transcript)")
-                             continue
+                             
                         msg_type = "agent_speech"
                     
                     if msg_type:

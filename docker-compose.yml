@@ -7,6 +7,9 @@ services:
       - "8000:8000"
     env_file:
       - .env
+    volumes:
+      - .:/app
+    working_dir: /app
     environment:
       - LIVEKIT_URL=${LIVEKIT_URL}
       - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
@@ -18,12 +21,16 @@ services:
       - SUPABASE_KEY=${SUPABASE_KEY}
     command: uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 
+
   # Backend Worker (LiveKit Agent)
   backend-worker:
     build: .
     container_name: voice-backend-worker
     env_file:
       - .env
+    volumes:
+      - .:/app
+    working_dir: /app
     environment:
       - LIVEKIT_URL=${LIVEKIT_URL}
       - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}

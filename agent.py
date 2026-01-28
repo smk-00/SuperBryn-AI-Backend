@@ -198,7 +198,7 @@ async def init_avatar(ctx, session, ref):
     try:
         # Instantiate AvatarSession
         # Ensure BEY_API_KEY is in env
-        avatar = bey.AvatarSession(avatar_id="7124071d-480e-4fdc-ad0e-a2e0680f1378")
+        avatar = bey.AvatarSession(avatar_id="f30d7eef-6e71-433f-938d-cecdd8c0b653")
         ref["session"] = avatar
         
         # Start the avatar
